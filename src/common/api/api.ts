@@ -1,31 +1,31 @@
 import axios, { AxiosError } from 'axios';
-import constants from './constants';
+import { API_CONSTANTS } from '../constants/apiconstants';
 import { headers } from './headerConstant';
 
 // @ts-ignore 
 const authorizationToken = JSON.parse(localStorage.getItem('UserData'));
-const apiBaseURL = constants.baseURL;
+const apiBaseURL = API_CONSTANTS.API_CONSTANT_URL;
 
-export const allApi = (dataurl: string, data: any, method: any) => {
-    if (constants.method.post === method) {
+export const callAPI = (dataurl: string, data: any, method: string) => {
+    if (API_CONSTANTS.METHOD.POST === method) {
         return axios.post(`${apiBaseURL}/${dataurl}`, data);
     }
-    if (constants?.method.get === method) {
+    if (API_CONSTANTS.METHOD.GET === method) {
         return axios.get(`${apiBaseURL}/${dataurl}`);
     }
-    if (constants?.method.delete === method) {
+    if (API_CONSTANTS.METHOD.DELETE === method) {
         return axios.delete(`${apiBaseURL}/${dataurl}`);
     }
-    if (constants.method.put === method) {
-        return axios?.put(`${apiBaseURL}/${dataurl}`, data);
+    if (API_CONSTANTS.METHOD.PUT === method) {
+        return axios.put(`${apiBaseURL}/${dataurl}`, data);
     }
 };
 
-export const allApiWithHeaders = (
+export const callAPIWithHeaders = (
     dataurl: string,
     data: any,
-    method: any,
-    headerFlag: any = false
+    method: string,
+    headerFlag: boolean = false
 ) => {
     headers.Authorization = `Bearer ${authorizationToken?.accessToken}`;
     const fileHeaders = {
@@ -33,7 +33,7 @@ export const allApiWithHeaders = (
         Authorization: `Bearer ${authorizationToken?.accessToken}`,
     };
     let apiCall: any = '';
-    if (constants.method.post === method) {
+    if (API_CONSTANTS.METHOD.POST === method) {
         apiCall = axios.post(`${apiBaseURL}/${dataurl}`, data, {
             headers: headerFlag ? fileHeaders : headers,
         });
@@ -44,7 +44,7 @@ export const allApiWithHeaders = (
         });
         return apiCall;
     }
-    if (constants.method.get === method) {
+    if (API_CONSTANTS.METHOD.GET === method) {
         apiCall = axios?.get(`${apiBaseURL}/${dataurl}`, { headers: headers });
         apiCall.catch((error: AxiosError) => {
             if (error?.response?.status === 401) {
@@ -53,7 +53,7 @@ export const allApiWithHeaders = (
         });
         return apiCall;
     }
-    if (constants.method.delete === method) {
+    if (API_CONSTANTS.METHOD.DELETE === method) {
         apiCall = axios?.delete(`${apiBaseURL}/${dataurl}`, {
             headers: headers,
         });
@@ -64,7 +64,7 @@ export const allApiWithHeaders = (
         });
         return apiCall;
     }
-    if (constants.method.put === method) {
+    if (API_CONSTANTS.METHOD.PUT === method) {
         apiCall = axios?.put(`${apiBaseURL}/${dataurl}`, data, {
             headers: headerFlag ? fileHeaders : headers,
         });
