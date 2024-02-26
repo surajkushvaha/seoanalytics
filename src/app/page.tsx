@@ -1,7 +1,8 @@
+import Root from '../pages/Root';
 export default function Home() {
   return (
     <>
-      <h1>Hello World</h1>
+     <Root/>
     </>
   );
 }
