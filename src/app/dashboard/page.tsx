@@ -1,8 +1,7 @@
-import Dashboard from "@/pages/Dashboard";
 const DashboardPage = () => {
   return (
     <>
-      <Dashboard/>
+      <h1>Dashboard is here</h1>
     </>
   );
 };
