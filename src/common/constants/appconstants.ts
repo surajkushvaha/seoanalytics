@@ -1,0 +1,21 @@
+export const APP_CONSTANTS = {
+  APP_NAME: "SEO Analatics",
+  APP_DEFAULT_TITLE: "SEO Analatics",
+  APP_TITLE_TEMPLATE: "%s - SEO Analatics",
+  APP_DESCRIPTION: "Best SEO Analytics in the world!",
+  INPUT_TYPE: {
+    TEXT: "text",
+    NUMBER: "number",
+    EMAIL: "email",
+    PASSWORD: "password",
+    DATE: "date",
+  },
+  DATE_FORMAT_DMY: "DD-MM-YYYY",
+  DATE_FORMAT_YMD: "YYYY-MM-DD",
+  ROW_COUNTS: [10, 20, 50, 100],
+  ROUTE_PATHS: {
+    ROOT: "/",
+    DASHBOARD: "/dashboard",
+    FORGOT_PASSWORD: "/forgot-password",
+  },
+};

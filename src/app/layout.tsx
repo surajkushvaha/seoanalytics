@@ -1,47 +1,42 @@
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
+import { APP_CONSTANTS } from "@/common/constants/appconstants";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const APP_NAME = "SEO Analatics";
-const APP_DEFAULT_TITLE = "SEO Analatics";
-const APP_TITLE_TEMPLATE = "%s - SEO Analatics";
-const APP_DESCRIPTION = "Best SEO Analytics in the world!";
-
 export const metadata: Metadata = {
-  applicationName: APP_NAME,
+  applicationName: APP_CONSTANTS.APP_NAME,
   title: {
-    default: APP_DEFAULT_TITLE,
-    template: APP_TITLE_TEMPLATE,
+    default: APP_CONSTANTS.APP_DEFAULT_TITLE,
+    template: APP_CONSTANTS.APP_TITLE_TEMPLATE,
   },
-  description: APP_DESCRIPTION,
+  description: APP_CONSTANTS.APP_DESCRIPTION,
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
+    title: APP_CONSTANTS.APP_DEFAULT_TITLE,
   },
   formatDetection: {
     telephone: false,
   },
   openGraph: {
     type: "website",
-    siteName: APP_NAME,
+    siteName: APP_CONSTANTS.APP_NAME,
     title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE,
+      default: APP_CONSTANTS.APP_DEFAULT_TITLE,
+      template: APP_CONSTANTS.APP_TITLE_TEMPLATE,
     },
-    description: APP_DESCRIPTION,
+    description: APP_CONSTANTS.APP_DESCRIPTION,
   },
   twitter: {
     card: "summary",
     title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE,
+      default: APP_CONSTANTS.APP_DEFAULT_TITLE,
+      template: APP_CONSTANTS.APP_TITLE_TEMPLATE,
     },
-    description: APP_DESCRIPTION,
+    description: APP_CONSTANTS.APP_DESCRIPTION,
   },
 };
 
