@@ -16,6 +16,10 @@ export const APP_CONSTANTS = {
   ROUTE_PATHS: {
     ROOT: "/",
     DASHBOARD: "/dashboard",
+    SUBSCRIPTION: "/dashboard/subscriptions",
+    PROFILE: "/dashboard/profile",
+    SEARCH: "/dashboard/search",
     FORGOT_PASSWORD: "/forgot-password",
+    SETTING: "/dashboard/setting",
   },
 };

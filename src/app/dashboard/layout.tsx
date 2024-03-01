@@ -1,18 +1,32 @@
+"use client";
 import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
+import { useState } from "react";
 
 export default function DasboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const [state, setState]: any = useState();
+  const clickHandler: any = (data: boolean) => {
+    setState(data);
+  };
+  const navbarProps = {
+    menuClickHandler: clickHandler,
+  };
+  const sidebarProps = {
+    state,
+  };
   return (
-    <div className="grid grid-cols-12 h-screen">
-      <Sidebar />
-      <div className="col-span-10 bg-[#1f1f70]">
-        <div className="grid grid-rows-12 h-screen">
-          <Navbar />
-          <div className="row-span-11 bg-red-500">{children}</div>
+    <div className="flex h-screen">
+      <Sidebar {...sidebarProps} />
+      <div className="flex-1 ">
+        <div className="flex flex-col h-screen border-l-4 border-l-[#1f1f70]">
+          <Navbar {...navbarProps} />
+          <div className="row-span-11 flex-1 rounded-[10px] bg-[#ccf4ff]">
+            {children}
+          </div>
         </div>
       </div>
     </div>

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.react-resizable-handle.react-resizable-handle-se{
+    position: absolute;
+    z-index: 100;
+    width: 20px;
+    height: 20px;
+    bottom: -3px;
+    right: -2px;
+    cursor: nwse-resize;
+    border-radius: 0 0 5px 0;
+}
+
 /* Custom common components css */
 .error-message{
     color: red;
