@@ -9,6 +9,7 @@ interface ButtonProps {
     icon?: any;
     tooltip?: string;
     loading?: boolean;
+    iconPos?: any;
 }
 const ButtonComponent: React.FC<ButtonProps> = ({
     label,
@@ -19,6 +20,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
     className,
     tooltip,
     loading,
+    iconPos
 }) => (
     <div className='custom-button-design'>
         <Button
@@ -30,6 +32,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
             icon={icon}
             tooltip={tooltip}
             loading={loading}
+            iconPos={iconPos}
         />
     </div>
 );
