@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { APP_CONSTANTS } from "@/common/constants/appconstants";
 import "./globals.css";
+import 'primeicons/primeicons.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
